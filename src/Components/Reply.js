@@ -14,7 +14,6 @@ const Reply = (props) => {
           <br />
           <p className="comment">{props.replyContent}</p>
           <br />
-          <p className="writeReply">답글 작성</p>
         </div>
       </div>
     </>

@@ -2,8 +2,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import "../../Styles/RecomendStyle.css";
+
 import { BsPerson, BsHandThumbsUp, BsHeart } from "react-icons/bs";
+import "../../Styles/RecomendStyle.css";
 import { Link } from "react-router-dom";
 
 import React, { useState } from "react";
@@ -53,7 +54,9 @@ const Recomend_detail = () => {
               className="btm-sm reportBtn"
               variant="outline-secondary"
               style={{ padding: "4px 0px 3px 0px", marginRight: "10px" }}
-              onClick={openModal}
+              onClick={() => {
+                alert("delete btn clicked");
+              }}
             >
               삭제
             </Button>
@@ -69,11 +72,18 @@ const Recomend_detail = () => {
         </div>
         <hr className="hr_Recomend" />
 
-        <p className="p_recomend">
-          <BsPerson /> petopia
+        <p className="p_recomend detailWriterP">
+          <img
+            className="detailProfileImg"
+            src="img/detail_profile_img.png"
+            alt=""
+          />
+          petopia
         </p>
         <p className="p_recommendDate">2023-05-05</p>
 
+        <br />
+        <br />
         <br />
         <br />
 
@@ -149,7 +159,7 @@ const Recomend_detail = () => {
             <br />
             <div className="thumbs">
               {/* <p className="thumbsHeartText">추천해요</p> */}
-              <button type="button" className="btn btn-lg">
+              <button type="button" className="thumbsHeartIconBtn">
                 <BsHandThumbsUp
                   className="thumbsHeartIcon"
                   onClick={thumbsClick}
@@ -162,7 +172,7 @@ const Recomend_detail = () => {
 
             <div className="heart">
               {/* <p className="thumbsHeartText">저장할래요</p> */}
-              <button type="button" className="btn btn-lg">
+              <button type="button" className="thumbsHeartIconBtn">
                 <BsHeart className="thumbsHeartIcon" />
               </button>
               <span className="thumbsHeartSpan">8</span>

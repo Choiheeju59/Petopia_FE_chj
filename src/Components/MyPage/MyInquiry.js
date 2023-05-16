@@ -8,6 +8,7 @@ import axios from "axios";
 import Header from "../Header.js";
 import Footer from "../Footer.js";
 import BgLeft from "../BgLeft.js";
+import "../../Styles/MyInquiry.css";
 
 const MyInquiry = () => {
   const [inquiryAction, setInquiryAction] = useState(0);

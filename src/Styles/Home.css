@@ -18,6 +18,7 @@
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
   margin: 0; 
+  cursor: pointer;
 }
 
 /* 이미지 슬라이드 */
@@ -30,32 +31,21 @@
     position: relative;
 }
 
-/* 슬라이더 내부 버튼 */
-/* .slick-prev,
-.slick-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-} 
-*/
-
-.slick-prev {
-  left: 0;
-}
-
-.slick-next {
-  right: 0;
-}
-
 .slick-dots {
-    display : hidden;
+    position: absolute;
+    bottom: 10px !important;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+    /* 필요한 경우 z-index 값을 조정하세요 */
 }
 
 .containerIh {
     position: relative;
     display: flex;
-    margin: 0.8em auto;
+    margin: 2em auto;
+    padding: 0;
     width: 100%;
     height: auto;
     justify-content: center;
@@ -63,6 +53,7 @@
 
 .testmap {
     display: block;
+    border: 1px solid #ccc;
     width: 100%;
     height: auto;
     /* border: 1px solid green; */
@@ -95,19 +86,20 @@
 .recommendation-title {
     display: block;
     width : 100%;
-    margin-bottom: 10px;
     background-color: #eaeaea;
     justify-content: center;
 }
 
 .recommendation-title p {
     font-size: 0.9em;
-    margin: 7px;
+    margin: 7px auto;
+    font-weight: bold;
 }
 
 .image-wrapper {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 150px;
+    margin-top: 1em;
 }
 
 /* image-wrapper div 내부 이미지 */
@@ -124,32 +116,32 @@
 }
 
 .stars-wrapper {
-    font-size: 1.5em;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .star {
+    font-size: 1.5em;
+    margin: 0 5px 10px 0;
     color: #ffd700;
 }
 
 .image-map-go p {
-    margin-top: 3px;
-    margin-bottom: 5px;
     font-size: 12px;
+    margin: 0;
 }
 
 .boardTitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 3px;
+    margin: 10px 0 0 0;
 }
 
 .boardTitle h7 {
     font-size: 15px;
     font-weight: bold;
-    margin-right: 10px;
 }
 
 .boardContent {
@@ -160,4 +152,14 @@
 .boardContent p {
     font-size: 13px;
     margin: 5px;
+}
+
+.home-recommend-link {
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
 }

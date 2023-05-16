@@ -336,7 +336,7 @@ const ReviewWriteComponent = () => {
                 placeholder="리뷰를 입력해 주세요."
                 className="contentForm reviewContentForm"
                 ref={reviewWriteContentTextArea}
-                maxLength={300}
+                maxLength={500}
                 onChange={() => {
                   setReviewWriteContentText(
                     reviewWriteContentTextArea.current.value.length
@@ -346,7 +346,7 @@ const ReviewWriteComponent = () => {
             </Form.Group>
           </Form>
           <p className="reviewWriteContentTextP">
-            {reviewWriteContentText}/300
+            {reviewWriteContentText}/500
           </p>
         </div>
       </div>

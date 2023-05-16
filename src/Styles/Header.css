@@ -1,13 +1,35 @@
-/* 로그인, 회원가입 버튼을 포함하는 부모 div */
 .headerBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 10px 10px 10px;
+}
+
+.headerBtns-R {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 10px 0 10px;
+}
+
+.headerBtns-left {
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.headerBtns-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.user-info-icon {
+    font-size: 20px;
 }
 
 /* 로그인, 회원가입 버튼 */
 .headerBtns button {
+    margin-left: auto;
     margin-right: 10px;
     font-size: 12px;
 }
@@ -36,6 +58,7 @@
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    width: auto;
 }
 
 .headerCategoryConteiner::-webkit-scrollbar {
@@ -46,7 +69,7 @@
 /* 카테고리 목록 전체 div */
 .nav-tabs {
     display: flex;
-    padding: 10px;
+    padding: 3px;
     padding-bottom: 0;
     margin: 0;
 }

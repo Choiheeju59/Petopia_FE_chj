@@ -7,7 +7,7 @@ import Header from "../Components/Header.js";
 import Footer from "../Components/Footer.js";
 import BgLeft from "../Components/BgLeft.js";
 import Board from "../Components/Board";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Kakao2 from "../Map/Kakao2.js";
 import axios from "axios";
 
@@ -38,6 +38,8 @@ const Home = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000, // 4초 간격
+    dots: true, // 점 표시 활성화
+    arrows: false, // 좌우 화살표 비활성화
   };
 
   let navigate = useNavigate();
@@ -67,7 +69,7 @@ const Home = () => {
   // DB로부터 장소 받아오기
   const getList = () => {
     axios
-      .get("/list", {})
+      .get("http://localhost:8080/list", {})
       .then((res) => {
         const { data } = res;
         const category1 = []; // 동물병원
@@ -214,36 +216,35 @@ const Home = () => {
           </div>
 
           {/* 여행지 추천 div */}
+
           <div className="recommendation">
             <div className="recommendation-title">
-              <p>경로 추천</p>
+              <p>이번 주 Best 경로</p>
             </div>
-            <div className="image-wrapper">
-              <img src="https://placehold.it/120x120" alt="image" />
-            </div>
-            <div className="image-map-go">
-              <p>지도로 보기</p>
-            </div>
-            <div className="boardTitle">
-              <h7>경로추천 Title</h7>
-            </div>
-            <div className="stars-wrapper">
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9734;</span>
-            </div>
+            <NavLink to="/recomend_best" className="home-recommend-link">
+              <div className="image-wrapper">
+                <img src="img/recommend_best2.png" alt="image" />
+              </div>
+              <div className="boardTitle">
+                <h7>양양 여행코스 추천!!</h7>
+              </div>
+              <div className="image-map-go">
+                <p>자세히 보기</p>
+              </div>
+              <div className="stars-wrapper">
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+              </div>
+            </NavLink>
           </div>
           {/* 커뮤니티 게시글 div */}
           <div className="recommendation">
             <div className="recommendation-title">
-              <p>인기게시글</p>
+              <p>이번 주 인기 게시글</p>
             </div>
-            <Board />
-            <Board />
-            <Board />
-            <Board />
             <Board />
           </div>
         </section>

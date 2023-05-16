@@ -57,6 +57,18 @@ const ReviewButtonsWrap = styled.div`
   margin-top: 20px;
 `;
 
+const RatingContainer = styled.div`
+  display: flex;
+  text-align: center;
+  margin: 13px 0px;
+  .inactive {
+    color: #c1c1c1;
+  }
+  .active {
+    color: #ffb950;
+  }
+`;
+
 const ReviewList = () => {
   const [checkedReviews, setCheckedReviews] = useState([]);
 

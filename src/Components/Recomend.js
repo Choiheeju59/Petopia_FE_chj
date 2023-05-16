@@ -5,7 +5,8 @@ import Form from "react-bootstrap/Form";
 import Recomend_Viewall from "./RecomendComponent/Recomend_viewall";
 import "../Styles/RecomendStyle.css";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import Board from "./Board";
+import Paginationcm from "./Paginationcm";
 
 const Recomend = () => {
   return (
@@ -60,8 +61,13 @@ const Recomend = () => {
         </Link>
       </div>
 
-      <Recomend_Viewall />
-      {/* <Footer /> */}
+      <div className="recommendation recommendAllBoardDiv">
+        <div className="recommendation-title"></div>
+        <Board />
+        <Paginationcm />
+      </div>
+
+      {/* <Recomend_Viewall /> */}
     </div>
   );
 };

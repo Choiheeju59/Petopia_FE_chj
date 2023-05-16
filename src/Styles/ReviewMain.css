@@ -1,0 +1,58 @@
+.reviewMainTitle {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  /* border: 1px solid black; */
+}
+
+.reviewMainRating {
+  padding: 5px;
+  /* border: 1px solid black; */
+  font-size: 16px;
+}
+
+.reviewMainCounting {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #888;
+}
+
+.reviewMainList {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+}
+
+.reviewMainListBox {
+  /* float: left; */
+  /* border: 1px solid black; */
+  width: 110px;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #888;
+}
+
+.reviewMainListTitle {
+  color: black;
+}
+
+.reviewMainInfo {
+  margin-top: 20px;
+  padding: 5px;
+  /* border: 1px solid black; */
+  font-size: 14px;
+}
+
+.reviewMainInfoTitle {
+  font-size: 14px;
+}
+
+.reviewMainInfoLink {
+  text-decoration: none;
+}

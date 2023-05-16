@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import styled from "styled-components";
+import { FaUser } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,8 @@ const BoardBox = styled.div`
   .cardti {
     display: flex;
     align-items: center;
-    vertical-align: middle;
+    justify-content: center; // 중앙 정렬
+    margin-bottom: -3px; // 간격 조정
   }
 `;
 
@@ -32,15 +34,15 @@ const BoardCard = styled.div`
   padding: 10px;
   margin: 5px 0;
   width: 100%;
-  height: 100%;
+  height: auto;
 `;
 
 const Thumbnail = styled.img`
-  width: 90px;
+  width: 120px;
   height: 85px;
-  margin-right: 10px;
   flex-shrink: 0;
   margin-bottom: 0;
+  border-radius: 10px;
 `;
 
 const ContentContainer = styled.div`
@@ -48,7 +50,8 @@ const ContentContainer = styled.div`
 `;
 
 const CardTitle = styled.div`
-  margin: 0;
+  margin: 3px;
+  text-align: center;
 `;
 
 const CardComments = styled.div`
@@ -60,6 +63,8 @@ const CardComments = styled.div`
 
 const CardInfoContainer = styled.div`
   margin-top: 3px;
+  display: flex;
+  justify-content: center;
 `;
 
 const CardInfo = styled.p`
@@ -84,56 +89,49 @@ const CardDate = styled.p`
   margin-top: 10px;
   text-align: right;
   font-size: 12px;
-  margin: 0 10px;
+  margin: 0px;
 `;
 
-const Card = () => {
-  const [lists, setlists] = useState([
-    {
-      id: 1,
-      title: "이번 주 인기 글",
-      content: "테스트입니다.",
-      date: "2023-04-25",
-      author: "홍길동",
-      views: 200,
-      comments: 37,
-      thumbnailUrl: "https://via.placeholder.com/150",
-      recommends: 70,
-    },
-  ]);
+const CardUser = styled.div`
+  text-align: right;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  
+`;
 
-  useEffect(() => {
-    axios
-      .get("/lists")
-      .then((response) => {
-        setlists(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
+const Card = ({
+  id,
+  title,
+  content,
+  date,
+  author,
+  views,
+  comments,
+  thumbnailUrl,
+  recommends,
+}) => {
   return (
     <BoardBox>
-      {lists.map((notice) => (
-        <Link className="linkstyle" to="/" key={notice.id}>
-          <BoardCard>
-            <Thumbnail src={notice.thumbnailUrl} alt={notice.title} />
-            <ContentContainer>
-              <div className="cardti">
-                <CardTitle>{notice.title}</CardTitle>
-                <CardComments>({notice.comments})</CardComments>
-              </div>
-              <CardInfoContainer>
-                <CardInfo>작성자 {notice.author}</CardInfo>
-                <CardInfo>조회수 {notice.views}</CardInfo>
-                <CardInfo>추천 수 {notice.recommends}</CardInfo>
-              </CardInfoContainer>
-              <CardDate>{notice.date}</CardDate>
-            </ContentContainer>
-          </BoardCard>
-        </Link>
-      ))}
+      <BoardCard>
+        <Thumbnail src={thumbnailUrl} alt={title} />
+        <ContentContainer>
+          <div className="cardti">
+            <CardTitle>{title}</CardTitle>
+            <CardComments>({comments})</CardComments>
+          </div>
+          <CardInfoContainer>
+            <CardUser>
+              <FaUser className="user-info-icon" />
+              &nbsp;
+              {author}
+            </CardUser>
+            <CardDate>{date}</CardDate>
+          </CardInfoContainer>
+          <CardInfo>조회수 {views}</CardInfo>
+          <CardInfo>추천수 {recommends}</CardInfo>
+        </ContentContainer>
+      </BoardCard>
     </BoardBox>
   );
 };

@@ -238,3 +238,72 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     margin: 20px 0 0 0;
     text-align: center;
 }
+
+/* NaverLogin ---------------------------------------------------------------------------------------------*/
+
+.naverIdLoginImgDiv {
+    width: 120px;
+    height: 30px;
+    margin: 0 10px 0 17px;
+    /* display: inline-block; */
+   display: none;
+}
+
+/* socialLoginSuccessTable ------------------------------------------------------------------------------- */
+
+.socialLoginSuccessDiv {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.socialLoginSuccessTable {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0 35px;
+}
+
+.socialLoginSuccessTr {
+    border-spacing: 0 10px;
+}
+
+.socialLoginSuccessTrProfile {
+    line-height: 3rem;
+}
+
+.socialLoginSuccessTdProfile {
+    margin: -20px 0 20px 0;
+    
+}
+
+.socialLoginSuccessTdProfileImg {
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+}
+
+.socialLoginSuccessTdTitle {
+    padding: 0px 0 0 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    color: #537FE7;
+}
+
+.socialLoginSuccessTd {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.socialLoginSuccessAgreeDiv {
+    margin: 0px 0 -20px 0;
+}

@@ -4,12 +4,16 @@ import "../../Styles/RegionModal.css";
 
 const RegionModal = ({ open, close }) => {
   const [cityChk1, setCityChk1] = useState("");
+  const handleCityClick = (city) => {
+    setCityChk1(city);
+    close();
+  };
   return (
     <div className={open ? "openRegion regionModal" : "regionModal"}>
       {open ? (
         <div className="regionModalContainer">
           <div className="regionModalHeader">
-            <b>지역선택</b>
+            <b>&nbsp;&nbsp;&nbsp;지역선택</b>
             <button
               className="regionModalBtn1"
               onClick={() => {
@@ -24,7 +28,7 @@ const RegionModal = ({ open, close }) => {
             <ul className="regionModalList">
               <li
                 onClick={() => {
-                  setCityChk1("서울");
+                  handleCityClick("서울");
                   close();
                 }}
               >
@@ -32,7 +36,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("경기도(북)");
+                  handleCityClick("경기도(북)");
                   close();
                 }}
               >
@@ -40,7 +44,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("경기도(남)");
+                  handleCityClick("경기도(남)");
                   close();
                 }}
               >
@@ -48,7 +52,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("강원도");
+                  handleCityClick("강원도");
                   close();
                 }}
               >
@@ -56,7 +60,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("충청북도");
+                  handleCityClick("충청북도");
                   close();
                 }}
               >
@@ -64,7 +68,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("충청남도");
+                  handleCityClick("충청남도");
                   close();
                 }}
               >
@@ -72,7 +76,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("경상북도");
+                  handleCityClick("경상북도");
                   close();
                 }}
               >
@@ -80,7 +84,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("경상남도");
+                  handleCityClick("경상남도");
                   close();
                 }}
               >
@@ -88,7 +92,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("전라북도");
+                  handleCityClick("전라북도");
                   close();
                 }}
               >
@@ -96,7 +100,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("전라남도");
+                  handleCityClick("전라남도");
                   close();
                 }}
               >
@@ -104,7 +108,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("광주");
+                  handleCityClick("광주");
                   close();
                 }}
               >
@@ -112,7 +116,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("대구");
+                  handleCityClick("대구");
                   close();
                 }}
               >
@@ -120,7 +124,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("대전");
+                  handleCityClick("대전");
                   close();
                 }}
               >
@@ -128,7 +132,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("부산");
+                  handleCityClick("부산");
                   close();
                 }}
               >
@@ -136,7 +140,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("울산");
+                  handleCityClick("울산");
                   close();
                 }}
               >
@@ -144,7 +148,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("인천");
+                  handleCityClick("인천");
                   close();
                 }}
               >
@@ -152,7 +156,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("제주");
+                  handleCityClick("제주");
                   close();
                 }}
               >
@@ -160,7 +164,7 @@ const RegionModal = ({ open, close }) => {
               </li>
               <li
                 onClick={() => {
-                  setCityChk1("세종");
+                  handleCityClick("세종");
                   close();
                 }}
               >

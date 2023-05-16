@@ -4,7 +4,7 @@ import Footer from "../Components/Footer.js";
 import BgLeft from "../Components/BgLeft.js";
 import SignUpComponent from "../Components/SignUpComponent.js";
 
-const Register = () => {
+const Register = ({ user, setUser }) => {
   return (
     <>
       <BgLeft />
@@ -12,7 +12,7 @@ const Register = () => {
       <main className="RouteTripSection">
         <Header />
         <section>
-          <SignUpComponent />
+          <SignUpComponent user={user} setUser={setUser} />
         </section>
         <Footer />
       </main>

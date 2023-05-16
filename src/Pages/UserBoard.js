@@ -33,6 +33,9 @@ const UserBoard = () => {
   // 세부 지역 선택 버튼 모달창
   const [modalOpen, setModalOpen] = useState(false);
 
+  //세부 지역 표시
+  const [cityChk1, setCityChk1] = useState("");
+
   // 세부 지역 선택 모달창 외부 클릭하면 모달창 닫힘
   // const outsideModal = useRef();
   // const clickOutside = (e) => {
@@ -98,8 +101,10 @@ const UserBoard = () => {
             {/* -- 자유 게시판 / 지역 게시판 선택 버튼 끝 -- */}
 
             <div className="totalBoard">
-              <div className="totalBoardTitle">{boards} 게시판 보기</div>
-              <br />
+              <div className="totalBoardTitle">
+                {cityChk1 && `${cityChk1} `}
+                {boards} 게시판 보기
+              </div>
               {/* 전체 지역 게시판 글 or 특정 지역 게시판 글 선택 버튼 */}
               {regionSelectBoxesView && (
                 <div className="RegionSelectBoxes">

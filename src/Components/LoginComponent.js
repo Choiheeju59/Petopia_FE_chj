@@ -1,16 +1,26 @@
 import "../Styles/Login.css";
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NaverLogin from "./SocialLogin/NaverLogin";
 
-const LoginComponent = () => {
+const LoginComponent = ({ user, setUser }) => {
   const email = useRef("");
   const password = useRef("");
+
+  useEffect(() => {}, [user]);
 
   const clickLogin = () => {
     sessionStorage.setItem("email", email.current.value);
     const sessionEmail = sessionStorage.getItem("email");
     alert("세션값 임시 설정(email : " + sessionEmail + ")\n");
   };
+
+  const [getToken, setGetToken] = useState("");
+
+  // 카카오 로그인
+  const Rest_api_key = `${process.env.REACT_APP_RESTAPI_KAKAO_APP_KEY}`; //REST API KEY
+  const redirect_uri = "http://localhost:3000/kakaologin"; //Redirect URI
+  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code&prompt=login`;
 
   return (
     <>
@@ -20,19 +30,16 @@ const LoginComponent = () => {
             <h4 className="mb-3 signUpText">로그인</h4>
 
             <div>
-              <img
-                className="socialLoginLogoLeft"
-                src="img/naver.png"
-                alt=""
-                type="button"
-              />
+              <NaverLogin setGetToken={setGetToken} setUser={setUser} />
 
-              <img
-                className="socialLoginLogoRight"
-                src="img/kakao.png"
-                alt=""
-                type="button"
-              />
+              <Link to={kakaoURL}>
+                <img
+                  className="socialLoginLogoRight"
+                  src="img/kakao.png"
+                  alt=""
+                  type="button"
+                />
+              </Link>
             </div>
 
             <br />

@@ -1,10 +1,9 @@
-import Form from "react-bootstrap/Form";
-import Stack from "react-bootstrap/Stack";
 import "../Styles/Login.css";
 import { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import NaverLogin from "./SocialLogin/NaverLogin";
 
-const SignUpComponent = () => {
+const SignUpComponent = ({ user, setUser }) => {
   const name = useRef("");
   const nickname = useRef("");
   const email = useRef("");
@@ -46,6 +45,13 @@ const SignUpComponent = () => {
     );
   };
 
+  // 카카오 로그인
+  const Rest_api_key = `${process.env.REACT_APP_RESTAPI_KAKAO_APP_KEY}`; //REST API KEY
+  const redirect_uri = "http://localhost:3000/kakaologin"; //Redirect URI
+  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code&prompt=login`;
+
+  const [getToken, setGetToken] = useState("");
+
   return (
     <>
       <div className="container loginComponent">
@@ -54,19 +60,16 @@ const SignUpComponent = () => {
             <h4 className="mb-3 signUpText">회원가입</h4>
 
             <div>
-              <img
-                className="socialLoginLogoLeft"
-                src="img/naver.png"
-                alt=""
-                type="button"
-              />
+              <NaverLogin setGetToken={setGetToken} setUser={setUser} />
 
-              <img
-                className="socialLoginLogoRight"
-                src="img/kakao.png"
-                alt=""
-                type="button"
-              />
+              <Link to={kakaoURL}>
+                <img
+                  className="socialLoginLogoRight"
+                  src="img/kakao.png"
+                  alt=""
+                  type="button"
+                />
+              </Link>
             </div>
 
             <br />

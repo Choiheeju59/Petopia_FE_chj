@@ -9,11 +9,22 @@
 .inquiryadminbox1{
     float: left;
     text-align: center;
+    border:1px solid white;
     padding: 10px 20px;
-    /* margin-left: 15px; */
 }
 
-.inquiryadminbox2{
+/* .inquiryadminbox1  */
+.inquiry_selected{
+    background:lightgray;
+    border:1px solid #915B2F;
+    border-radius: 5px;
+}
+
+.inquiryadminbox1:hover{
+    opacity: 0.6;
+}
+
+/* .inquiryadminbox2{
     float: left;
     text-align: center;
     padding: 10px 20px;
@@ -23,7 +34,7 @@
     float: left;
     text-align: center;
     padding: 10px 20px;
-}
+} */
 
 .inquiryadmincount{
     font-size: 12px;
@@ -37,4 +48,58 @@
 
 .inquiryadminDetailContent{
     margin-top: 20px;
+}
+
+.inquiryadminStatus{
+    position: absolute;
+    right: 30px;
+    margin-top: -10px;
+    padding: 0 5px;
+    font-size: 14px;
+    text-align: center;
+    width: auto;
+    border: 1px solid #537FE7;
+    border-radius: 5px;
+    background-color: #537FE7;
+    color: #eee;
+    font-size: 12px;
+}
+
+.inquiryadminStatusWait{
+    position: absolute;
+    right: 30px;
+    margin-top: -10px;
+    padding: 0 5px;
+    font-size: 14px;
+    text-align: center;
+    width: auto;
+    border: 2px solid red;
+    border-radius: 5px;
+    /* background-color: #537FE7; */
+    color: red;
+    font-size: 12px;
+}
+
+.inquiryadminStatusComplete{
+    position: absolute;
+    right: 30px;
+    margin-top: -10px;
+    padding: 0 5px;
+    font-size: 14px;
+    text-align: center;
+    width: auto;
+    border: 2px solid #537FE7;
+    border-radius: 5px;
+    /* background-color: #537FE7; */
+    color: #537FE7;
+    font-size: 12px;
+}
+
+.inquiryAdminAnswerTitle{
+    font-size: 14px;
+}
+
+.inquiryAdminDetailContent1{
+    margin-top: 10px;
+    padding: 5px;
 }

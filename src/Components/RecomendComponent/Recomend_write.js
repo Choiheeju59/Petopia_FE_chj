@@ -67,13 +67,13 @@ const Recomend_write = () => {
               placeholder="글 내용을 입력하세요"
               className="contentForm"
               ref={writeContentTextArea}
-              maxLength={300}
+              maxLength={3000}
               onChange={() => {
                 setWriteContentText(writeContentTextArea.current.value.length);
               }}
             />
           </Form.Group>
-          <p className="writeContentTextP">{writeContentText}/300</p>
+          <p className="writeContentTextP">{writeContentText}/3000</p>
 
           <div>
             <p className="recomendP" style={{ marginTop: "15px" }}>

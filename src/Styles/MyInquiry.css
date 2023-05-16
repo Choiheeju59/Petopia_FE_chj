@@ -4,7 +4,7 @@
 }
 
 .inquiryhr1{
-    width: 90%;
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -14,28 +14,29 @@
 
 .inquiryMain{
     margin: 0 auto;
-
-    /* margin-top: 10px; */
     width: 90%;
 }
 
-.test9{
-    /* width: 100%; */
-    padding: 5px;
-    /* border: 1px solid black; */
+.inquiryNone{
+    margin: 10px auto;
+    text-align: center;
+    width: 90%;
 }
 
-.test9:hover{
+.inquiryMain1{
+    padding: 5px;
+}
+
+.inquiryMain1:hover{
     background-color: lightgray;
     opacity: 0.9;
 }
 
-.test10{
+.inquiryMainTitle{
     font-size: 14px;
-
 }
 
-.test11{
+.inquiryMainDate{
     font-size: 14px;
     color:#888;
 }
@@ -93,7 +94,6 @@
 
 .inquiryWriteContainer{
     width: 90%;
-    /* border: 1px solid black; */
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -166,7 +166,7 @@
 .inquiryBack{
     position: absolute; 
     left: 10px;
-    top:110px;
+    top:90px;
      float: left;
     text-align: center;
     height: auto;
