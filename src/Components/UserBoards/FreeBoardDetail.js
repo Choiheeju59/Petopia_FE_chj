@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../Components/Header.js";
 import Footer from "../../Components/Footer.js";
 import BgLeft from "../../Components/BgLeft.js";
+import ReportModal from "../../Modal/ReportModal";
 import "bootstrap/dist/css/bootstrap.css";
+import "../../Styles/RecomendStyle.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "../../Styles/RecomendStyle.css";
 
 const FreeBoardDetail = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <>
+      <ReportModal open={modalOpen} close={closeModal} header="게시글 신고">
+        <p>신고 사유를 선택해 주세요</p>
+      </ReportModal>
       <BgLeft />
       <main className="RouteTripSection">
         <Header />
@@ -28,15 +40,47 @@ const FreeBoardDetail = () => {
                   variant="outline-primary"
                   size="sm"
                 >
-                  Search
+                  검색
                 </Button>
               </Form>
             </div>
 
-            <h4 className="h4_Recomend">게시글 제목</h4>
+            <h4 className="h4_Recomend">게시글 테스트</h4>
+            <div className="detailReportBtnDiv">
+              {sessionStorage.getItem("email") === "admin@admin.com" ? (
+                <Button
+                  className="btm-sm reportBtn"
+                  variant="outline-secondary"
+                  style={{ padding: "4px 0px 3px 0px", marginRight: "10px" }}
+                  onClick={() => {
+                    alert("delete btn clicked");
+                  }}
+                >
+                  삭제
+                </Button>
+              ) : null}
+              <Button
+                className="btm-sm reportBtn"
+                variant="outline-danger"
+                style={{ padding: "4px 0px 3px 0px" }}
+                onClick={openModal}
+              >
+                🚨신고
+              </Button>
+            </div>
             <hr className="hr_Recomend" />
 
-            <p className="p_recomend">작성자 : petopia</p>
+            <p className="p_recomend detailWriterP">
+              <img
+                className="detailProfileImg"
+                src="img/titletest2.jpg"
+                alt=""
+              />
+              petopia
+            </p>
+            <p className="p_recommendDate">2023-05-05</p>
+            <br />
+            <br />
             <br />
             <br />
 
@@ -44,47 +88,34 @@ const FreeBoardDetail = () => {
               <div>
                 <img
                   className="RecomendDetailImg"
-                  src="img/recommend_detail1.png"
+                  src="img/titletest3.jpg"
                   alt=""
                 />
               </div>
 
               <div>
                 <p className="RecomendDetailP">
-                  [송도IBD 매거진 블로그]에서는, 송도IBD '블로그피플'이라는
-                  코너를 연재하고 있습니다. <br />
-                  일상생활과 문화, 예술 등 송도IBD의 생생한 모습들이 담겨있는
-                  블로그를 하나하나 찾아 소개해드리는 코너지요! <br />
-                  이번에는 '로니&베베 개판 Story'라는 독특한 이름을 가진
-                  블로그를 만나봤습니다. <br />
                   <br />
-                  블로그를 운영하고 계신 로니PaPa님은 비글 로니와 닥스훈트
-                  베베라는 반려견을 키우고 있습니다.
-                  <br /> 이 활발한 강아지들을 산책시킬 때는 송도국제도시에 있는
-                  센트럴파크가 딱이라고 하는데요.
+                  모든 국민은 근로의 의무를 진다. <br />
+                  국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로
+                  정한다. <br />
                   <br />
-                  <br /> 이유가 뭘까요? 그 현장에서 확인해보시죠!
+                  국회는 의장 1인과 부의장 2인을 선출한다.
+                  <br /> 국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원
+                  또는 정부위원은 출석·답변하여야 하며,
+                  <br />
+                  국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는
+                  정부위원으로 하여금 출석·답변하게 할 수 있다.
+                  <br />
                 </p>
               </div>
               <br />
 
               <div>
-                <img
-                  className="RecomendDetailImg"
-                  src="img/recommend_detail2.png"
-                  //   src="https://placeholder.com/300x200"
-                  alt=""
-                />
-              </div>
-
-              <div>
                 <p className="RecomendDetailP">
-                  센트럴파크에서의 행복한 한 때를 보낸 로니, 베베 그리고 파파.{" "}
+                  제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여
+                  국회재적의원 과반수의 찬성이 있어야 한다.
                   <br />
-                  마치 화보 같은 센트럴파크의 사진들을 보니 정말 푸른 풀밭이
-                  있는 공원에서 여유로운 한 때를 보내고 싶은 기분이 들지
-                  않으세요? <br />
-                  오늘은 공원 산책, 어떠세요?
                 </p>
               </div>
 
